@@ -1,7 +1,8 @@
 package Pilhas_Filas;
 
 public class PrincipalPilha {
-
+    
+    //método para somar todos os elementos da pilha, sem perder os elementos originais
     public static int somarElementos(Pilha<Integer> pilha){
         int soma = 0;
 
@@ -19,6 +20,7 @@ public class PrincipalPilha {
         return soma;
     }
     void main(){
+        //testando o método do item 4
         Pilha<Integer> pilha = new Pilha<>();
 
         pilha.push(3);
