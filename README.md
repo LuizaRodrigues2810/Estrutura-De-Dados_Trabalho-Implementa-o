@@ -63,7 +63,42 @@ src/
 | 4 | Somar os elementos da pilha | `int somarElementos(Pilha<Integer> pilha)` | 2,0 | ✅ |
 | 5 | Parênteses balanceados | `boolean verificarBalanceamento(String texto)` | 1,5 | ⬜ |
 
+### Como funciona: `verificarPalíndromo`
+
+Para verificar se uma palavra é um palíndromo, a palavra é preenchida numa pilha (invertendo a ordem devido ao comportamento **LIFO**). Depois, comparamos os elementos que saem da pilha com o **texto original** utilizando um índice auxiliar.
+
+```java
+public static boolean ehPalindromo(String texto) {
+    Pilha<Character> investida = new Pilha<>();
+
+    int i = 0;
+    while (i < texto.length()) {
+        investida.push(texto.charAt(i));
+        i++;
+    }
+
+    int j = 0;
+    while (!investida.vazia()) {
+        char topo = investida.pop();
+
+        if (topo != texto.charAt(j)) {
+            return false;
+        }
+        j++;
+    }
+
+    return true;
+}
+
+**Exemplo de saída**
+
+```
+Texto: "arara"
+É palíndromo: true
 ### Como funciona: `somarElementos`
+```
+
+---
 
 Para somar sem perder os elementos, cada valor é retirado da pilha, somado e guardado numa **pilha auxiliar**. No final, tudo volta para a pilha original e a ordem é preservada (a ordem inverte duas vezes).
 
