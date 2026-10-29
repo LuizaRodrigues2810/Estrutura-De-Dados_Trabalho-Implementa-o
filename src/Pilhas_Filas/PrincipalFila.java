@@ -24,20 +24,41 @@ public class PrincipalFila {
         }
         return duasFilas;
     }
+    //3. Inverter uma Fila
+    public static void inverterFila(Fila<Integer> fila){
+        Pilha<Integer> auxPilha = new Pilha<>();
+
+        while(!fila.vazia()){
+            int valor = fila.dequeue();
+            auxPilha.push(valor);
+        }
+        while(!auxPilha.vazia()){
+            int valor = auxPilha.pop();
+            fila.enqueue(valor);
+        }
+
+    }
     public static void main(String[] args) {
 
-       Fila<Integer> f1 = new Fila<>();
-       f1.enqueue(1);
-       f1.enqueue(2);
+       Fila<Integer> fila = new Fila<>();
+       fila.enqueue(1);
+       fila.enqueue(2);
+       fila.enqueue(3);
 
-       Fila<Integer> f2 = new Fila<>();
-       f2.enqueue(3);
-       f2.enqueue(4);
+       IO.println("Antes: " + fila);
+       inverterFila(fila);
+       IO.println("Depois: " + fila);
 
-       Fila<Integer> resultaCombinacao = combinarFilas(f1,f2);
-       IO.println("f1: " + f1);
-       IO.println("f2: " + f2);
-       IO.println("Resultado: " + resultaCombinacao);
+
+       //Fila<Integer> f2 = new Fila<>();
+       //f2.enqueue(3);
+       //f2.enqueue(4);
+
+       //Fila<Integer> resultaCombinacao = combinarFilas(f1,f2);
+
+       //IO.println("f1: " + f1);
+       //IO.println("f2: " + f2);
+       //IO.println("Resultado: " + resultaCombinacao);
 
 
 
