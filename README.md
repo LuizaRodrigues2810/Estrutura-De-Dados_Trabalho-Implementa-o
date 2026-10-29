@@ -89,15 +89,17 @@ public static boolean ehPalindromo(String texto) {
 
     return true;
 }
+```
 
 **Exemplo de saída**
 
 ```
 Texto: "arara"
 É palíndromo: true
-### Como funciona: `somarElementos`
 ```
+---
 
+### Como funciona: `somarElementos`
 ---
 
 Para somar sem perder os elementos, cada valor é retirado da pilha, somado e guardado numa **pilha auxiliar**. No final, tudo volta para a pilha original e a ordem é preservada (a ordem inverte duas vezes).
