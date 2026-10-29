@@ -1,4 +1,4 @@
-[README (1).md](https://github.com/user-attachments/files/34152235/README.1.md)
+
 
 # 📚 Estrutura de Dados I – Pilhas e Filas
 
