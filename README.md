@@ -57,13 +57,43 @@ src/
 
 | # | Questão | Assinatura | Pontos | Status |
 |---|---|---|:---:|:---:|
-| 1 | Remover elementos maiores que um valor | `void removerMaioresQue(Pilha<Integer> pilha, int limite)` | 2,0 | ⬜ |
-| 2 | Verificar palíndromo | `boolean ehPalindromo(String texto)` | 2,5 | ⬜ |
-| 3 | Inverter a ordem dos elementos | `Pilha<Integer> inverterPilha(Pilha<Integer> original)` | 2,0 | ⬜ |
+| 1 | Remover elementos maiores que um valor | `void removerMaioresQue(Pilha<Integer> pilha, int limite)` | 2,0 | ✅ |
+| 2 | Verificar palíndromo | `boolean ehPalindromo(String texto)` | 2,5 | ✅ |
+| 3 | Inverter a ordem dos elementos | `Pilha<Integer> inverterPilha(Pilha<Integer> original)` | 2,0 | ✅ |
 | 4 | Somar os elementos da pilha | `int somarElementos(Pilha<Integer> pilha)` | 2,0 | ✅ |
 | 5 | Parênteses balanceados | `boolean verificarBalanceamento(String texto)` | 1,5 | ⬜ |
 
 ### Como funciona: `verificarPalíndromo`
+
+Para remover elementos maiores do que um determinado limite sem perder a ordem dos restantes, cada valor é retirado da **pilha original**. Se o valor for menor ou igual ao limite, ele é guardado numa **pilha auxiliar** (`aux`). No final, os elementos são devolvidos à pilha original, o que inverte a ordem duas vezes e preserva a disposição inicial dos dados que ficaram.
+
+```java
+public static void removerMaioresQue(Pilha<Integer> pilha, int limite) {
+    Pilha <Integer> aux = new Pilha<>();
+
+    while (!pilha.vazia()){
+        Integer topo = pilha.pop();
+        if (topo <= limite) {
+            aux.push(topo);
+        }
+    }
+
+    while (!aux.vazia()) {
+        pilha.push(aux.pop());
+    }
+}
+```
+
+**Exemplo de saída**
+
+```
+Pilha Original: [5, 12, 3, 8, 15]
+Limite: 10
+Pilha Atualizada (Removidos os maiores que 10): [5, 3, 8]
+```
+---
+
+### Como funciona: `RemoverElementosMaioresQueUmValor`
 
 Para verificar se uma palavra é um palíndromo, a palavra é preenchida numa pilha (invertendo a ordem devido ao comportamento **LIFO**). Depois, comparamos os elementos que saem da pilha com o **texto original** utilizando um índice auxiliar.
 
@@ -97,6 +127,32 @@ public static boolean ehPalindromo(String texto) {
 Texto: "arara"
 É palíndromo: true
 ```
+---
+
+### Como funciona: `inverterAOrdemDosElementos`
+
+Para inverter os elementos de uma pilha sem perder a estrutura original, cada valor é desempilhado da pilha original e empilhado em uma nova pilha. Por conta do comportamento LIFO (Last In, First Out), a ordem dos elementos é invertida naturalmente durante a transferência.
+
+```java
+public static Pilha<Integer> inverterPilha(Pilha<Integer> original) {
+    Pilha<Integer> np = new Pilha<>();
+    
+    while (!original.vazia()) {
+        Integer nova = original.pop();
+        np.push(nova);
+    }
+    
+    return np;
+}
+```
+
+**Exemplo de saída**
+
+```
+Pilha Original: [1, 2, 3, 4]
+Pilha Invertida: [4, 3, 2, 1]
+```
+
 ---
 
 ### Como funciona: `somarElementos`
