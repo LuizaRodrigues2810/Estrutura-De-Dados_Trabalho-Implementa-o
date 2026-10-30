@@ -49,6 +49,18 @@ public class PrincipalFila {
 
     }
     public static void main(String[] args) {
+         // Testando o método moverPrimeiroParaFinal
+     Fila<Integer> fila = new Fila<>();
+     fila.enqueue(10);
+     fila.enqueue(20);
+     fila.enqueue(30);
+     fila.enqueue(40); // frente da fila / primeiro elemento
+     
+     IO.println("Fila original: " + fila);
+     
+     moverPrimeiroParaFinal(fila);
+     
+     IO.println("Fila após mover o primeiro para o final: " + fila);
 
        Fila<Integer> fila = new Fila<>();
        fila.enqueue(1);
