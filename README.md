@@ -189,10 +189,34 @@ Pilha: [3, 5, 2]
 
 | # | Questão | Assinatura | Pontos | Status |
 |---|---|---|:---:|:---:|
-| 1 | Mover o primeiro elemento para o final | `void moverPrimeiroParaFinal(Fila<Integer> fila)` | 1,0 | ⬜ |
+| 1 | Mover o primeiro elemento para o final | `void moverPrimeiroParaFinal(Fila<Integer> fila)` | 1,0 | ✅ |
 | 2 | Combinar duas filas | `Fila<Integer> combinarFilas(Fila<Integer> f1, Fila<Integer> f2)` | 3,0 | ✅ |
 | 3 | Inverter uma fila | `void inverterFila(Fila<Integer> fila)` | 3,0 | ✅ |
 | 4 | Contar ocorrências de um elemento | `int contarOcorrencias(Fila<String> fila, String valor)` | 3,0 | ⬜ |
+
+### Como funciona: `MoverOPrimeiroElementoParaOFinal `
+
+Para mover o primeiro elemento para o final, removemos o elemento da frente da fila usando o método dequeue() e guardamo-lo numa variável auxiliar. Em seguida, inserimos esse mesmo elemento de volta na fila usando o método enqueue(), o que o posiciona automaticamente na última posição.
+
+```java
+ public static void moverPrimeiroParaFinal(Fila<Integer> fila) {
+        if (fila.vazia()) {
+            return;
+        }
+        Integer aux = fila.dequeue();
+        fila.enqueue(aux);
+
+    }
+```
+
+**Exemplo de saída**
+
+```
+Fila Original: [10, 20, 30, 40]
+Fila Atualizada (Primeiro movido para o final): [20, 30, 40, 10]
+```
+
+---
 
 ### Como funciona: `combinarFilas`
 
