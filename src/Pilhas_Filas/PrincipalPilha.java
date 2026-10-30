@@ -19,6 +19,25 @@ public class PrincipalPilha {
         }
         return soma;
     }
+
+
+    // método que verifica se o texto inserido (que tenha parenteses) está balanceado no fechamento dos '()'
+    public static boolean verificarBalanceamento(String texto) {
+        Pilha<Character> pilha = new Pilha<>();
+        for (int i = 0; i < texto.length(); i++) {
+            char c = texto.charAt(i);
+            if (c == '(') {
+                pilha.push(c);
+            } else if (c == ')') {
+                if (pilha.vazia()) {
+                    return false;
+                }
+                pilha.pop();
+            }
+        }
+        return pilha.vazia();
+    }
+
     void main(){
         //testando o método do item 4
         Pilha<Integer> pilha = new Pilha<>();
