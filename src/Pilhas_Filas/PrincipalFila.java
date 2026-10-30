@@ -50,38 +50,57 @@ public class PrincipalFila {
     }
     public static void main(String[] args) {
          
-         // Testando o método moverPrimeiroParaFinal
+      //1. moverPrimeiroParaFinal
       Fila<Integer> fila = new Fila<>();
       fila.enqueue(10);
       fila.enqueue(20);
       fila.enqueue(30);
       fila.enqueue(40); // frente da fila 
-     
       IO.println("Fila original: " + fila);
-     
       moverPrimeiroParaFinal(fila);
-     
       IO.println("Fila após mover o primeiro para o final: " + fila);
-
-       Fila<Integer> fila = new Fila<>();
-       fila.enqueue(1);
-       fila.enqueue(2);
-       fila.enqueue(3);
-
-       IO.println("Antes: " + fila);
-       inverterFila(fila);
-       IO.println("Depois: " + fila);
+      IO.println();
 
 
-       //Fila<Integer> f2 = new Fila<>();
-       //f2.enqueue(3);
-       //f2.enqueue(4);
+     //2. combinarFilas
+      Fila<Integer> f1 = new Fila<>();
+      f1.enqueue(1);
+      f1.enqueue(2);
+      Fila<Integer> f2 = new Fila<>();
+      f2.enqueue(3);
+      f2.enqueue(4);
+      Fila<Integer> combinada = combinarFilas(f1,f2);
+      IO.println("f1: " + f1);
+      IO.println("f2: " + f2);
+      IO.println("Resultado: " + combinada);
+      IO.println();
+         
+       //3. inveterFila
+      Fila<Integer> fila = new Fila<>();
+      fila.enqueue(1);
+      fila.enqueue(2);
+      fila.enqueue(3);
+      IO.println("Antes: " + fila);
+      inverterFila(fila);
+      IO.println("Depois: " + fila);
+      IO.println();
 
-       //Fila<Integer> resultaCombinacao = combinarFilas(f1,f2);
+      //4. contarOcorrencias
+      Fila<String> filaContar = new Fila <>();
+      filaContar.enqueue("a");
+      filaContar.enqueue("b");
+      filaContar.enqueue("a");
+      filaContar.enqueue("c");
+      filaContar.enqueue("a");
+      IO.println("Fila: " + filaContar);
+      IO.println("Ocorrências de \"a\": " + Fila.contarOcorrencias(filaContar, "a"));
+      IO.println("Fila depois: " + filaContar);
+      
+         
+     
 
-       //IO.println("f1: " + f1);
-       //IO.println("f2: " + f2);
-       //IO.println("Resultado: " + resultaCombinacao);
+
+     
 
 
 
