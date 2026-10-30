@@ -2,6 +2,16 @@ package Pilhas_Filas;
 
 public class PrincipalFila {
 
+     //1. Mover o Primeiro Elemento para o Final 
+     public static void moverPrimeiroParaFinal(Fila<Integer> fila) {
+        if (fila.vazia()) {
+            return;
+        }
+        Integer aux = fila.dequeue();
+        fila.enqueue(aux);
+
+    }
+    
     //2. Combinar Duas Filas
     public static Fila<Integer> combinarFilas(Fila<Integer> f1, Fila<Integer> f2){
         Fila<Integer> duasFilas = new Fila<>();
