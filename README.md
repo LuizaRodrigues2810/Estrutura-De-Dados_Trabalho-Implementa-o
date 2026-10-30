@@ -63,7 +63,7 @@ src/
 | 4 | Somar os elementos da pilha | `int somarElementos(Pilha<Integer> pilha)` | 2,0 | ✅ |
 | 5 | Parênteses balanceados | `boolean verificarBalanceamento(String texto)` | 1,5 | ⬜ |
 
-### Como funciona: `verificarPalíndromo`
+### Como funciona: `RemoverElementosMaioresQueUmValor `
 
 Para remover elementos maiores do que um determinado limite sem perder a ordem dos restantes, cada valor é retirado da **pilha original**. Se o valor for menor ou igual ao limite, ele é guardado numa **pilha auxiliar** (`aux`). No final, os elementos são devolvidos à pilha original, o que inverte a ordem duas vezes e preserva a disposição inicial dos dados que ficaram.
 
@@ -93,7 +93,7 @@ Pilha Atualizada (Removidos os maiores que 10): [5, 3, 8]
 ```
 ---
 
-### Como funciona: `RemoverElementosMaioresQueUmValor`
+### Como funciona: `verificarPalíndromo`
 
 Para verificar se uma palavra é um palíndromo, a palavra é preenchida numa pilha (invertendo a ordem devido ao comportamento **LIFO**). Depois, comparamos os elementos que saem da pilha com o **texto original** utilizando um índice auxiliar.
 
