@@ -1,5 +1,3 @@
-# 📚 Estrutura de Dados I
-
 # 📚 Estrutura de Dados I – Pilhas e Filas
 
 Repositório com as **Tarefas de Implementação 2 (Pilhas)** e **3 (Filas)** da disciplina de Estrutura de Dados I.
