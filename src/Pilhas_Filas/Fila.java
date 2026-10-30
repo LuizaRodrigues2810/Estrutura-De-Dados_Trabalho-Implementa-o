@@ -39,19 +39,6 @@ public class Fila<T> {
         lista = new LinkedList<>();
     }
 
-    public static int contarOcorrencias(Fila<String> fila, String valor) {
-        int contador = 0;
-        int n = fila.tamanho();            // quantas voltas dar
-        for (int i = 0; i < n; i++) {
-            String atual = fila.dequeue(); // tira da frente
-            if (atual.equals(valor)) {     // compara conteúdo
-                contador++;
-            }
-            fila.enqueue(atual);           // devolve no final
-        }
-        return contador;
-    }
-
     @Override
     public String toString(){
         return lista.toString();
