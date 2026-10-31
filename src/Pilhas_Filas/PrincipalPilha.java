@@ -2,7 +2,7 @@ package Pilhas_Filas;
 
 public class PrincipalPilha {
 
-    //método para remover elementos maiores que um valor 
+    //1.Remover elementos maiores que um valor  
     public static void removerMaioresQue(Pilha<Integer> pilha, int limite) {
         Pilha<Integer> aux = new Pilha<>();
 
@@ -19,7 +19,7 @@ public class PrincipalPilha {
 
     }
 
-    //método para verificar se uma palavra é um palíndromo
+    //2. Verificar palíndromo
     public static boolean ehPalindromo(String texto) {
         Pilha<Character> investida = new Pilha<>();
 
@@ -43,7 +43,7 @@ public class PrincipalPilha {
     }
 
 
-    //método para inverter a ordem dos elementos
+    //3.Inverter as ordens dos elementos
     public static Pilha<Integer> inverterPilha(Pilha<Integer> original) {
         Pilha<Integer> nova = new Pilha<>();
 
@@ -57,7 +57,7 @@ public class PrincipalPilha {
     }
 
 
-    //método para somar todos os elementos da pilha, sem perder os elementos originais
+    //4.Somar os elementos da pilha
     public static int somarElementos(Pilha<Integer> pilha) {
         int soma = 0;
 
@@ -76,7 +76,7 @@ public class PrincipalPilha {
     }
 
 
-    // método que verifica se o texto inserido (que tenha parenteses) está balanceado no fechamento dos '()'
+    //5.Parênteses balanceados
     public static boolean verificarBalanceamento(String texto) {
         Pilha<Character> pilha = new Pilha<>();
         for (int i = 0; i < texto.length(); i++) {
@@ -126,7 +126,7 @@ public class PrincipalPilha {
         IO.println("Pilha invertida: " + invertida);
 
 
-        // Testando o método do item 4
+        // Testando o método: somarElementos
         Pilha<Integer> pilha = new Pilha<>();
 
         pilha.push(3);
@@ -137,6 +137,19 @@ public class PrincipalPilha {
 
         IO.println("Soma dos elementos: " + resultado);
         IO.println("Pilha: " + pilha);
+
+        //Testando o método: verificarBalanceamento
+         String[] expressoes = {
+                "(a+b)*(c-d)",   
+                "(()())",        
+                "((a+b)",       
+                "a+b)",          
+                ")(",           
+                ""             
+        };
+        for (String expressao : expressoes) {
+            IO.println("\"" + expressao + "\" está balanceada? " + verificarBalanceamento(expressao));
+        }
 
 
     }
